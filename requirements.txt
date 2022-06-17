@@ -1,0 +1,6 @@
+fiona==1.8.21
+geocoder==1.38.1
+geopandas==0.10.2
+numpy==1.22.3
+rtree==1.0.0
+shapely==1.8.1.post1

@@ -1,0 +1,39 @@
+# Project Information
+site_name: MSA Mapper
+
+# Configuration
+theme:
+  name: "material"
+  features:
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+  # logo: assets/logo.png
+
+# Plugins
+plugins:
+  - search
+  - mkdocstrings
+
+# Customization
+extra:
+  generator: false
+extra_css: [assets/extra.css]
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+
+# Page tree
+nav:
+  - Home: index.md
+  - Functions:
+    - Geographic Decoder: msa_mapper/geocoder.md
+    - Census MSA Mapping: msa_mapper/census_msa.md
