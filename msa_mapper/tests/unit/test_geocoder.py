@@ -2,7 +2,7 @@ from math import isclose
 from msa_mapper.geocoder import get_geoinfo
 
 
-def test_sample():
+def test_geocoder_sample():
     """
     Tests to see if geocoder's get_geoinfo function is returning correct output
     """
@@ -14,7 +14,7 @@ def test_sample():
         AssertionError('Coordinates were not returned as a two-length tuple')
 
     assert addrss.strip() == '801 Grand Ave, Des Moines, Iowa, 50309', \
-        ValueError('Test case address was not expected output')
+        AssertionError('Test case address was not expected output')
     assert (isclose(coords[0], -93.63, abs_tol=0.01)
             and isclose(coords[1], 41.59, abs_tol=0.01)), \
-        ValueError("Test case coordinates did not match expected values")
+        AssertionError("Test case coordinates did not match expected values")
