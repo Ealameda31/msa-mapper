@@ -1,7 +1,9 @@
+import pytest
 from math import isclose
 from msa_mapper.geocoder import get_geoinfo
 
 
+@pytest.mark.dependency(name='geocoder_sample')
 def test_geocoder_sample():
     """
     Tests to see if geocoder's get_geoinfo function is returning correct output

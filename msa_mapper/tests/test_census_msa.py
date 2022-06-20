@@ -1,8 +1,9 @@
-import numpy as np
+import pytest
 from geopandas import GeoDataFrame
 from msa_mapper.census_msa import map_census_locations
 
 
+@pytest.mark.dependency(name="census_msa_single_sample")
 def test_census_msa_single_sample():
     """
     Tests to see if census_msa's map_census_locations function is returning
@@ -27,6 +28,7 @@ def test_census_msa_single_sample():
                        + " expected one of 'Des Moines-West Des Moines, IA'")
 
 
+@pytest.mark.dependency(name="census_msa_multi_sample")
 def test_census_msa_multi_sample():
     """
     Tests to see if census_msa's map_census_locations function is returning
