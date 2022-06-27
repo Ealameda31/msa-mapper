@@ -2,8 +2,8 @@
 -----------
 The Python library, `msa_mapper`, contains two modules:
 
-  1. [Geographic Decoder](/modules/geocoder)
-  2. [Census MSA Mapping](/modules/census_msa)
+  1. [Geographic Decoder](../modules/geocoder.md)
+  2. [Census MSA Mapping](../modules/census_msa.md)
 
 These modules each serve a specific purpose but can be combined to provide geopolitical regions for any location. To accomplish this, users can follow the workflow below:
 

@@ -8,8 +8,8 @@
 ## Getting Started
 ------------------
   * To set up an environment with the library installed, follow the [instructions outlined within the Git repository](https://github.com/Ealameda31/msa-mapper/blob/master/README.md). 
-  * Visit the [Modules section](/modules/geocoder) for comprehensive documentation on library modules and their corresponding functions.
-  * Understand how to call the functions and use them in conjunction by visiting the [Use-Cases sub-section](/home/use_cases) of this page. 
+  * Visit the [Modules section](modules/geocoder.md) for comprehensive documentation on library modules and their corresponding functions.
+  * Understand how to call the functions and use them in conjunction by visiting the [Use-Cases sub-section](home/use_cases.md) of this page. 
 
 ## Useful Links
 ---------------
