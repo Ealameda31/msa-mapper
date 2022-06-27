@@ -1,0 +1,27 @@
+name: Dev Workflow
+
+on:
+  push: {branches: dev}
+  pull_request: {branches: dev}
+
+jobs:
+  build:
+    name: Initialize Runner
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Project
+      uses: actions/checkout@v2
+      with:
+        lfs: true
+    - name: Checkout LFS objects
+      run: git lfs checkout
+
+    - name: Build Python library
+      run: docker build -t msa_mapper .
+
+    - name: Run Tests
+      run: docker run --rm msa_mapper ./.github/scripts/pytest_install_run.sh
+    
+    - name: Build Webpage
+      run: docker run --rm msa_mapper ./.github/scripts/mkdocs_install_build.sh

@@ -2,6 +2,7 @@ FROM python:3.10.0a7-slim-buster
 
 COPY . /
 
+RUN chmod -R +x ./.github/scripts/*
 RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
