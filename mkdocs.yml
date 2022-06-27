@@ -30,10 +30,17 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 # Page tree
 nav:
-  - Home: index.md
-  - Functions:
-    - Geographic Decoder: msa_mapper/geocoder.md
-    - Census MSA Mapping: msa_mapper/census_msa.md
+  - Home:
+    - Home: index.md
+    - Use-Cases: home/use_cases.md
+  - Modules:
+    - Geographic Decoder: modules/geocoder.md
+    - Census MSA Mapping: modules/census_msa.md

@@ -15,7 +15,7 @@ setup(
     author_email='emalameda96@gmail.com',
     maintainer='Enrique M. Alameda-Basora',
     maintainer_email='emalameda96@gmail.com',
-    url='',
+    url='https://ealameda31.github.io/msa-mapper/',
     description='Geocode locations and map coordinates to Metropolitan Areas',
     classifiers=[
         'Development Status :: 5 - Production/Stable',

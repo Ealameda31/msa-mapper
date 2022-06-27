@@ -1,0 +1,37 @@
+name: Master Push Workflow
+
+on:
+  push: {branches: master}
+
+jobs:
+  build:
+    name: Initialize Runner
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Project
+      uses: actions/checkout@v2
+      with:
+        lfs: true
+    - name: Checkout LFS objects
+      run: git lfs checkout
+
+    - name: Build Python library
+      run: docker build -t msa_mapper .
+    
+    - name: Render Webpage
+      run: |
+        git config user.name "GitHub Actions Bot"
+        docker run --rm msa_mapper ./.github/scripts/mkdocs_install_deploy.sh
+
+    - name: Update Release
+      run: |
+        old_v=$(cat version.txt)
+        git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+        new_v=$(git tag --sort=taggerdate | tail -1 | cut -b 2-)
+        git rm version.txt
+        echo -n $new_v > version.txt
+        git config user.name "GitHub Actions Bot"
+        git add version.txt
+        git commit -m "Release: $old_v → $new_v" --quiet
+        git push

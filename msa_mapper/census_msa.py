@@ -28,10 +28,12 @@ def _get_mapping_files(shp_str):
         AssertionError: The string passed must designate a unique shapefile
             within the 'shapefiles/census/' package directory.
     """
-    assert (isinstance(shp_str, str)), "Please ensure input is a string."
+    assert (isinstance(shp_str, str)), \
+        AssertionError("Please ensure input is a string.")
     file = [f for f in os.listdir(dir_name) if shp_str in f]
     assert (len(file) == 1), \
-        "Shapefile with string designation not found or non-unique."
+        AssertionError("Shapefile with string designation not found or"
+                       + " non-unique.")
     shp = io.BytesIO(open(dir_name + file[0], 'rb').read())
     with fiona.BytesCollection(shp.read()) as src:
         crs = src.crs['init']
@@ -64,7 +66,7 @@ def map_census_locations(coords):
           coordinate pair area - useful when mapping to other sources |
 
     Raises:
-        AssertionError: Coordinates must either be a list of tuples with two
+        ValueError: Coordinates must either be a list of tuples with two
             floats in each element or a single tuple with two floats.
 
     Examples:
@@ -84,10 +86,10 @@ def map_census_locations(coords):
             or (isinstance(coords, tuple)
                 and all(type(x) == float for x in coords)
                 and len(coords) == 2)), \
-                    ("Coordinates must either be a list of tuples with two"
-                     + " floats in each element or a single tuple with two"
-                     + " floats. Example [(0.2, 0.4), (0.5, 0.6)] or"
-                     + " (0.2, 0.4).")
+        ValueError("Coordinates must either be a list of tuples with two"
+                   + " floats in each element or a single tuple with two"
+                   + " floats. Example [(0.2, 0.4), (0.5, 0.6)] or"
+                   + " (0.2, 0.4).")
 
     metdiv_gdf = _get_mapping_files('metdiv')[0]
     cbsa_gdf, cbsa_crs = _get_mapping_files('cbsa')

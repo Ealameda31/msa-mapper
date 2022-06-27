@@ -1,4 +1,4 @@
-fiona==1.8.21
+Fiona==1.8.21
 geocoder==1.38.1
 geopandas==0.10.2
 numpy==1.22.3
