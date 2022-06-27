@@ -39,7 +39,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home:
-    - Overview: home/overview.md
+    - Home: index.md
     - Use-Cases: home/use_cases.md
   - Modules:
     - Geographic Decoder: modules/geocoder.md
