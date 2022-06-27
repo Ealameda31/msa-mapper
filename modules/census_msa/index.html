@@ -1,0 +1,762 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>Census MSA Mapping - MSA Mapper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#census-msa-mapping" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MSA Mapper" class="md-header__button md-logo" aria-label="MSA Mapper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MSA Mapper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Census MSA Mapping
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../geocoder/" class="md-tabs__link md-tabs__link--active">
+        Modules
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MSA Mapper" class="md-nav__button md-logo" aria-label="MSA Mapper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MSA Mapper
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">Home</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../home/use_cases/" class="md-nav__link">
+        Use-Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geocoder/" class="md-nav__link">
+        Geographic Decoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Census MSA Mapping
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Census MSA Mapping
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#msa_mapper.census_msa" class="md-nav__link">
+    msa_mapper.census_msa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msa_mapper.census_msa.map_census_locations" class="md-nav__link">
+    map_census_locations()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#msa_mapper.census_msa" class="md-nav__link">
+    msa_mapper.census_msa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msa_mapper.census_msa.map_census_locations" class="md-nav__link">
+    map_census_locations()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="census-msa-mapping">Census MSA Mapping<a class="headerlink" href="#census-msa-mapping" title="Permanent link">&para;</a></h1>
+<hr />
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="msa_mapper.census_msa"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="msa_mapper.census_msa.map_census_locations" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">map_census_locations</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span></code>
+
+
+<a href="#msa_mapper.census_msa.map_census_locations" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Given a list of longitude/latitude coordinate pairs or a single pair, this
+function will map the locations to the census-defined Metropolitan
+Statistical Area (MSA).</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>coords</code></td>
+        <td><code>tuple or list[tuple]</code></td>
+        <td><p>either a single coordinate pair
+or a list of longitude/latitude coordinates</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>      <p><strong>Returns:</strong></p>
+<p>This function returns a geopandas.geodataframe.GeoDataFrame with the
+following columns</p>
+<table>
+<thead>
+<tr>
+<th align="left">Column</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Coordinates</td>
+<td align="left"><code>shapely.geometry.Point</code></td>
+<td align="left">coordinates           passed to the function as a shapely geometry</td>
+</tr>
+<tr>
+<td align="left">MSA_Name</td>
+<td align="left"><code>str</code></td>
+<td align="left">name given by the census to the MSA mapped to the           coordinate pair</td>
+</tr>
+<tr>
+<td align="left">MSA_Fip_Code</td>
+<td align="left"><code>str</code></td>
+<td align="left">code given by the census to describe the           coordinate pair area - useful when mapping to other sources</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Exceptions:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>ValueError</code></td>
+        <td><p>Coordinates must either be a list of tuples with two
+floats in each element or a single tuple with two floats.</p></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <p>Function can be applied to a single coordinate pair or a list of
+coordinates and is robust to empty values:</p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">msa_mapper</span> <span class="kn">import</span> <span class="n">map_census_locations</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dc_lonlat</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">77.03637</span><span class="p">,</span> <span class="mf">38.9072</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map_census_locations</span><span class="p">(</span><span class="n">dc_lonlat</span><span class="p">)</span>
+</code></pre></div>
+
+        <details class="quote">
+          <summary>Source code in <code>msa_mapper/census_msa.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_census_locations</span><span class="p">(</span><span class="n">coords</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given a list of longitude/latitude coordinate pairs or a single pair, this</span>
+<span class="sd">    function will map the locations to the census-defined Metropolitan</span>
+<span class="sd">    Statistical Area (MSA).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        coords (tuple or list[tuple]): either a single coordinate pair</span>
+<span class="sd">            or a list of longitude/latitude coordinates</span>
+
+<span class="sd">    **Returns:**</span>
+
+<span class="sd">    This function returns a geopandas.geodataframe.GeoDataFrame with the</span>
+<span class="sd">    following columns</span>
+
+<span class="sd">      | Column | Type | Description |</span>
+<span class="sd">      | :----- | :--- | :---------- |</span>
+<span class="sd">      | Coordinates | `shapely.geometry.Point`| coordinates \</span>
+<span class="sd">          passed to the function as a shapely geometry |</span>
+<span class="sd">      | MSA_Name | `str` | name given by the census to the MSA mapped to the \</span>
+<span class="sd">          coordinate pair |</span>
+<span class="sd">      | MSA_Fip_Code | `str` | code given by the census to describe the \</span>
+<span class="sd">          coordinate pair area - useful when mapping to other sources |</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Coordinates must either be a list of tuples with two</span>
+<span class="sd">            floats in each element or a single tuple with two floats.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        Function can be applied to a single coordinate pair or a list of</span>
+<span class="sd">        coordinates and is robust to empty values:</span>
+
+<span class="sd">        &gt;&gt;&gt; from msa_mapper import map_census_locations</span>
+<span class="sd">        &gt;&gt;&gt; dc_lonlat = (-77.03637, 38.9072)</span>
+<span class="sd">        &gt;&gt;&gt; map_census_locations(dc_lonlat)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="p">((</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+             <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">)</span>
+             <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
+                     <span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="o">*</span><span class="p">[[(</span><span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+                                  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">coords</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">])))</span>
+             <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">))</span>
+            <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)),</span> \
+        <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Coordinates must either be a list of tuples with two&quot;</span>
+                   <span class="o">+</span> <span class="s2">&quot; floats in each element or a single tuple with two&quot;</span>
+                   <span class="o">+</span> <span class="s2">&quot; floats. Example [(0.2, 0.4), (0.5, 0.6)] or&quot;</span>
+                   <span class="o">+</span> <span class="s2">&quot; (0.2, 0.4).&quot;</span><span class="p">)</span>
+
+    <span class="n">metdiv_gdf</span> <span class="o">=</span> <span class="n">_get_mapping_files</span><span class="p">(</span><span class="s1">&#39;metdiv&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cbsa_gdf</span><span class="p">,</span> <span class="n">cbsa_crs</span> <span class="o">=</span> <span class="n">_get_mapping_files</span><span class="p">(</span><span class="s1">&#39;cbsa&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="n">lonlat_gdf_cbsa</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+                                           <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">]},</span>
+                             <span class="n">crs</span><span class="o">=</span><span class="n">cbsa_crs</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">lonlat_gdf_cbsa</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="n">coords</span><span class="p">)]},</span>
+                             <span class="n">crs</span><span class="o">=</span><span class="n">cbsa_crs</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="n">subset_metdiv</span> <span class="o">=</span> <span class="n">metdiv_gdf</span><span class="p">[[</span><span class="s2">&quot;geometry&quot;</span><span class="p">,</span> <span class="s2">&quot;NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;METDIVFP&quot;</span><span class="p">,</span> <span class="s2">&quot;CBSAFP&quot;</span><span class="p">]]</span>
+    <span class="n">subset_cbsa</span> <span class="o">=</span> <span class="n">cbsa_gdf</span><span class="p">[[</span><span class="s2">&quot;geometry&quot;</span><span class="p">,</span> <span class="s2">&quot;NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;CBSAFP&quot;</span><span class="p">]]</span>
+
+    <span class="n">lonlat_metdiv_joined</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">gpd</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">lonlat_gdf_cbsa</span><span class="p">,</span>
+                  <span class="n">subset_metdiv</span><span class="p">,</span>
+                  <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+                  <span class="n">predicate</span><span class="o">=</span><span class="s1">&#39;within&#39;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;index_right&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">all_joined</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">gpd</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">lonlat_metdiv_joined</span><span class="p">,</span>
+                  <span class="n">subset_cbsa</span><span class="p">,</span>
+                  <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+                  <span class="n">predicate</span><span class="o">=</span><span class="s1">&#39;within&#39;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;index_right&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;MSA_Name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+            <span class="p">[(</span><span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;NAME_left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()),</span>
+             <span class="p">(</span><span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;NAME_left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">())],</span>
+            <span class="p">[(</span><span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;NAME_left&quot;</span><span class="p">]),</span>
+             <span class="p">(</span><span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;NAME_right&quot;</span><span class="p">])])</span>
+    <span class="p">)</span>
+
+    <span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;MSA_Fip_Code&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+            <span class="p">[(</span><span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;METDIVFP&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()),</span>
+             <span class="p">(</span><span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;METDIVFP&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">())],</span>
+            <span class="p">[(</span><span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;METDIVFP&quot;</span><span class="p">]),</span>
+             <span class="p">(</span><span class="n">all_joined</span><span class="p">[</span><span class="s2">&quot;CBSAFP_right&quot;</span><span class="p">])])</span>
+    <span class="p">)</span>
+
+    <span class="n">all_joined</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">all_joined</span><span class="p">[[</span><span class="s2">&quot;geometry&quot;</span><span class="p">,</span> <span class="s2">&quot;MSA_Name&quot;</span><span class="p">,</span> <span class="s2">&quot;MSA_Fip_Code&quot;</span><span class="p">]]</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="s2">&quot;Coordinates&quot;</span><span class="p">})</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">all_joined</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../geocoder/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Geographic Decoder" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Geographic Decoder
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+    
+  </body>
+</html>
